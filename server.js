@@ -9,12 +9,10 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-const port = 8000
-
 app.use('/', express.static('../web/build'));
 
 app.use('/collections', collectionsRouter);
 
-app.listen(port, () => {
-  console.log(`PML Server listening on ${port}`)
-})
+app.listen(process.env.NODE_PORT, () => {
+  console.log(`PML Server listening on ${ process.env.NODE_PORT }`)
+});

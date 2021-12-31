@@ -5,6 +5,7 @@
   "description": "The backend services for the PML",
   "main": "server.js",
   "scripts": {
+    "start": "node -r dotenv/config server.js",
     "server": "node -r dotenv/config server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,5 +18,8 @@
     "dotenv": "^10.0.0",
     "express": "^4.17.2",
     "mongodb": "^4.2.2"
+  },
+  "engines": {
+    "node": "17.x"
   }
 }
