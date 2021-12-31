@@ -14,5 +14,5 @@ app.use('/', express.static('../web/build'));
 app.use('/collections', collectionsRouter);
 
 app.listen(process.env.NODE_PORT, () => {
-  console.log(`PML Server listening on ${ process.env.NODE_PORT }`)
+  console.log(`PML Server listening on ${ process.env.PORT || process.env.NODE_PORT }`)
 });
