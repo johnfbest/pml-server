@@ -1,0 +1,21 @@
+{
+  "name": "pml-server",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "The backend services for the PML",
+  "main": "server.js",
+  "scripts": {
+    "server": "node -r dotenv/config server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "John Best",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.1",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.2",
+    "mongodb": "^4.2.2"
+  }
+}
