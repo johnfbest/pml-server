@@ -27,5 +27,37 @@ router.get('/library/item', async (req, res) => {
     }
 });
 
+router.post('/search', async (req, res) => {
+    try{
+        let { params, collection } = req.body;
+        
+        if (collection){   
+            let results = await collections.search(params, collection);
+            res.json(results);
+        } else {
+            res.end('No collection');
+        }
+    } catch(err) {
+        console.error(err);
+        res.end('Server Error');
+    }
+});
+
+router.post('/browse', async (req, res) => {
+    try{
+        let { letter, collection } = req.body;
+        
+        if (collection){   
+            let results = await collections.browse(letter, collection);
+            res.json(results);
+        } else {
+            res.end('No collection');
+        }
+    } catch(err) {
+        console.error(err);
+        res.end('Server Error');
+    }
+});
+
 export { router as collectionsRouter };
 
